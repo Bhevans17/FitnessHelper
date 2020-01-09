@@ -1,6 +1,8 @@
 (function() {
   "use strict";
 
+  AOS.init();
+
   /* Open and close mobile side menu */
   let hamburgerIcon = document.getElementsByClassName("fa-bars");
 

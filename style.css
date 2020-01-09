@@ -6,9 +6,6 @@ body {
 
 /*********** NAVIGATION ***********/
 nav {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
   height: 7.5vh;
   width: 100%;
   background-color: white;
@@ -20,8 +17,6 @@ nav {
 }
 
 nav a {
-  flex-grow: 1;
-  text-align: center;
   color: black;
   text-decoration: none;
 }
@@ -48,7 +43,7 @@ nav a {
 
 /*********** MAIN ***********/
 main {
-  margin-top: 10vh;
+  margin-top: 12.5vh;
   padding: 5%;
   text-align: center;
 }
@@ -66,6 +61,7 @@ main img {
 .calculator-wrapper {
   padding-bottom: 7.5vh;
 }
+
 main form {
   width: 100%;
   margin: 0 auto;
@@ -134,7 +130,7 @@ main form {
 
 /*********** FIND WORKOUTS SECTION ***********/
 .find-workouts-wrapper {
-  margin-bottom: 30vh;
+  margin-bottom: 35vh;
 }
 .find-workouts-wrapper h2 {
   color: #5dcd11;
