@@ -6,7 +6,7 @@ body {
 
 /*********** NAVIGATION ***********/
 nav {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   height: 7.5vh;
@@ -16,6 +16,7 @@ nav {
   top: 0;
   position: fixed;
   overflow: hidden;
+  z-index: 1000;
 }
 
 nav a {
@@ -45,22 +46,7 @@ nav a {
   display: none;
 }
 
-.macro-calculator-results {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.macro-calculator-results h3 {
-  width: 50%;
-}
-
-.macro-calculator-results span {
-  color: grey;
-}
-
+/*********** MAIN ***********/
 main {
   margin-top: 10vh;
   padding: 5%;
@@ -76,9 +62,12 @@ main img {
   height: 20vh;
 }
 
+/*********** MACRO CALCULATOR ***********/
+.calculator-wrapper {
+  padding-bottom: 7.5vh;
+}
 main form {
-  width: 80%;
-  border: 1px solid black;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
   padding: 10%;
@@ -98,12 +87,90 @@ main form {
   cursor: pointer;
 }
 
+.macro-calculator-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  color: white;
+  background-color: #343a40;
+  border-radius: 25px;
+  padding: 5%;
+  margin: 5% 0;
+  display: none;
+}
+
+.macro-calculator-results h3 {
+  width: 50%;
+}
+
+.macro-calculator-results span {
+  color: lightgrey;
+}
+
+/*********** HERE TO HELP SECTION ***********/
+.here-to-help-wrapper {
+  padding-bottom: 7.5vh;
+}
+
+.here-to-help-wrapper h2 {
+  color: #5dcd11;
+}
+
+.here-to-help-wrapper button {
+  padding: 7.5px 18px;
+  background-color: #26beff;
+  border: 1px solid #26beff;
+  color: white;
+}
+
+.here-to-help-wrapper button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/*********** FIND WORKOUTS SECTION ***********/
+.find-workouts-wrapper {
+  margin-bottom: 30vh;
+}
+.find-workouts-wrapper h2 {
+  color: #5dcd11;
+}
+
+/*********** FOOTER ***********/
 footer {
   width: 100%;
+  padding: 5%;
   background-color: #343a40;
-  color: white;
+  color: lightgrey;
   position: absolute;
   bottom: 0;
+}
+
+footer p {
+  margin: 5% 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  padding-top: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: grey;
 }
 
 /*********** MAIN ***********/
