@@ -152,6 +152,7 @@ nav .fa-bars {
 .here-to-help-wrapper {
   border: 1px solid black;
   height: 80vh;
+  text-align: center;
 }
 
 .here-to-help-wrapper img {
@@ -181,6 +182,7 @@ nav .fa-bars {
 .find-workouts-wrapper {
   border: 1px solid black;
   height: 80vh;
+  text-align: center;
 }
 
 .find-workouts-wrapper img {
