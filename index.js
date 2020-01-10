@@ -4,9 +4,11 @@
   AOS.init();
 
   /* Open and close mobile side menu */
-  let hamburgerIcon = document.getElementsByClassName("fa-bars");
+  let hamburgerIcon = document.getElementsByClassName("fa-bars")[0];
+  let crossIcon = document.getElementsByClassName("fa-times")[0];
+  let sideMenu = document.getElementsByClassName("mobile-side-menu")[0];
 
-  hamburgerIcon[0].addEventListener("click", function() {
-    console.log(hamburgerIcon);
+  hamburgerIcon.addEventListener("click", function() {
+    sideMenu.className = "mobile-side-menu-show";
   });
 })();

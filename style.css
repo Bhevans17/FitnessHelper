@@ -1,19 +1,22 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  position: relative;
 }
 
 /*********** NAVIGATION ***********/
 nav {
   height: 7.5vh;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
   top: 0;
-  position: fixed;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 1;
+}
+
+nav .container,
+nav .row {
+  height: 7.5vh;
 }
 
 nav a {
@@ -21,6 +24,16 @@ nav a {
   text-decoration: none;
 }
 
+nav .logo {
+  text-align: left;
+
+  display: block;
+}
+
+nav .fa-bars {
+  text-align: right;
+  display: block;
+}
 .logo {
   color: #5dcd11;
 }
@@ -29,40 +42,66 @@ nav a {
   color: #26beff;
 }
 
-.nav-links {
+/* Mobile Side Menu */
+.mobile-side-menu {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2 !important;
+  background-color: white;
+  border-left: 1px solid black;
   display: none;
 }
 
-.nav-links ul li {
-  display: inline;
+.mobile-side-menu .fa-times {
+  padding: 25px 25px 0 0;
+  text-align: right;
+  display: block;
 }
 
-.times-icon {
-  display: none;
+.mobile-side-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/*********** MAIN ***********/
-main {
-  margin-top: 12.5vh;
+.mobile-side-menu ul li {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.mobile-side-menu ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.mobile-side-menu ul li a:hover {
+  color: grey;
+}
+
+/*********** CALCULATOR WRAPPER ***********/
+.calculator-wrapper {
   padding: 5%;
   text-align: center;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-main h1 {
+.calculator-wrapper h1 {
   color: #5dcd11;
 }
 
-main img {
+.calculator-wrapper img {
   width: 80vw;
   height: 20vh;
 }
 
 /*********** MACRO CALCULATOR ***********/
-.calculator-wrapper {
-  padding-bottom: 7.5vh;
-}
-
-main form {
+.macro-calculator {
   width: 100%;
   margin: 0 auto;
   text-align: left;
@@ -101,13 +140,23 @@ main form {
   width: 50%;
 }
 
+.macro-calculator-results a {
+  color: lightgrey;
+}
+
 .macro-calculator-results span {
   color: lightgrey;
 }
 
 /*********** HERE TO HELP SECTION ***********/
 .here-to-help-wrapper {
-  padding-bottom: 7.5vh;
+  border: 1px solid black;
+  height: 80vh;
+}
+
+.here-to-help-wrapper img {
+  width: 80vw;
+  height: 20vh;
 }
 
 .here-to-help-wrapper h2 {
@@ -130,8 +179,15 @@ main form {
 
 /*********** FIND WORKOUTS SECTION ***********/
 .find-workouts-wrapper {
-  margin-bottom: 35vh;
+  border: 1px solid black;
+  height: 80vh;
 }
+
+.find-workouts-wrapper img {
+  width: 80vw;
+  height: 20vh;
+}
+
 .find-workouts-wrapper h2 {
   color: #5dcd11;
 }
@@ -142,8 +198,6 @@ footer {
   padding: 5%;
   background-color: #343a40;
   color: lightgrey;
-  position: absolute;
-  bottom: 0;
 }
 
 footer p {
