@@ -1,20 +1,3 @@
-<!-- Footer -->
-<footer>
-    <ul>
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Create Account</a>
-        </li>
-        <li>
-            <a href="#">Login</a>
-        </li>
-    </ul>
-</footer>
 <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
 <script src="https://kit.fontawesome.com/b836e57116.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
