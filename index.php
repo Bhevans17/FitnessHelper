@@ -61,7 +61,7 @@
                                     <option value="light">Light</option>
                                     <option value="moderate">Moderate</option>
                                     <option value="heavy">Heavy</option>
-                                    <option value="ahtlete">Athlete</option>
+                                    <option value="athlete">Athlete</option>
                                 </select>
                             </div>
                         </div>
