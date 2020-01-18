@@ -85,7 +85,6 @@ nav .fa-bars {
 .calculator-wrapper {
   padding: 5%;
   text-align: center;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -150,9 +149,12 @@ nav .fa-bars {
 
 /*********** HERE TO HELP SECTION ***********/
 .here-to-help-wrapper {
-  border: 1px solid black;
-  height: 80vh;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .here-to-help-wrapper img {
@@ -180,9 +182,12 @@ nav .fa-bars {
 
 /*********** FIND WORKOUTS SECTION ***********/
 .find-workouts-wrapper {
-  border: 1px solid black;
-  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .find-workouts-wrapper img {
