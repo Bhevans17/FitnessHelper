@@ -81,7 +81,7 @@
 </div>
 <!-- Here To Help Section -->
 <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-middle">
         <div class="col-12">
             <div data-aos="fade-left" data-aos-anchor-placement="top-center" class="here-to-help-wrapper">
                 <h2> Here To Help</h2>

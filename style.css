@@ -199,7 +199,8 @@ footer {
   width: 100%;
   padding: 5%;
   background-color: #343a40;
-  color: lightgrey;
+  color: white;
+  text-align: center;
 }
 
 footer p {
