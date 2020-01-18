@@ -1,3 +1,4 @@
+<!-- Footer -->
 <footer>
     <p>Copyright 2020 &copy; All Rights Reserved.</p>
 </footer>

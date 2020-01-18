@@ -153,6 +153,10 @@ nav .fa-bars {
   width: 50%;
 }
 
+.macro-calculator-results p {
+  display: block;
+}
+
 .macro-calculator-results a {
   color: lightgrey;
 }
@@ -171,20 +175,24 @@ nav .fa-bars {
   margin-bottom: 50px;
 }
 
+.here-to-help-wrapper h2 {
+  color: #5dcd11;
+  margin-bottom: 25px;
+}
+
 .here-to-help-wrapper img {
   width: 80vw;
   height: 20vh;
-}
-
-.here-to-help-wrapper h2 {
-  color: #5dcd11;
+  margin-bottom: 25px;
 }
 
 .here-to-help-wrapper button {
   padding: 7.5px 18px;
   background-color: #26beff;
   border: 1px solid #26beff;
+  border-radius: 5px;
   color: white;
+  margin-bottom: 25px;
 }
 
 .here-to-help-wrapper button:hover {
@@ -207,10 +215,12 @@ nav .fa-bars {
 .find-workouts-wrapper img {
   width: 80vw;
   height: 20vh;
+  margin-bottom: 25px;
 }
 
 .find-workouts-wrapper h2 {
   color: #5dcd11;
+  margin-bottom: 25px;
 }
 
 /*********** FOOTER ***********/

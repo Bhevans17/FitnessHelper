@@ -96,10 +96,11 @@
         </div>
     </div>
 </div>
+<!-- Find Workouts Section -->
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <!-- Find Workouts Section -->
+
             <div data-aos="fade-right" data-aos-anchor-placement="top-center" class="find-workouts-wrapper">
                 <h2>Find Your Next Workout</h2>
                 <img src="./img/undraw_working_out_6psf.svg" alt="">
