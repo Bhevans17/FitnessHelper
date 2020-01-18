@@ -14,21 +14,6 @@
 
 <body>
 
-    <!-- Mobile Side Menu -->
-    <div class="mobile-side-menu">
-        <i class="fas fa-times"></i>
-        <ul>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Create Account</a>
-            </li>
-            <li>
-                <a href="#">Login</a>
-            </li>
-        </ul>
-    </div>
     <!-- Navigation Bar -->
     <nav>
         <div class="container">
@@ -44,3 +29,18 @@
             </div>
         </div>
     </nav>
+    <!-- Mobile Side Menu -->
+    <div class="mobile-side-menu-hidden">
+        <i class="fas fa-times"></i>
+        <ul>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Sign Up</a>
+            </li>
+            <li>
+                <a href="#">Login</a>
+            </li>
+        </ul>
+    </div>

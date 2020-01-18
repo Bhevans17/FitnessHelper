@@ -6,31 +6,33 @@
   /* Open and close mobile side menu */
   let hamburgerIcon = document.getElementsByClassName("fa-bars")[0];
   let crossIcon = document.getElementsByClassName("fa-times")[0];
-  let sideMenu = document.getElementsByClassName("mobile-side-menu")[0];
+  let sideMenu = document.getElementsByClassName("mobile-side-menu-hidden")[0];
 
   hamburgerIcon.addEventListener("click", function() {
-    sideMenu.className = "mobile-side-menu-show";
+    sideMenu.className = "mobile-side-menu";
+  });
+
+  crossIcon.addEventListener("click", function() {
+    if ((sideMenu.className = "mobile-side-menu")) {
+      sideMenu.className = "mobile-side-menu-hidden";
+    }
   });
 
   /* Macro Calculator */
-  let macroCalculatorForm = document.getElementById("macro-form");
-  macroCalculatorForm.onsubmit = () => {
-    let age = document.getElementById("age").value;
-    let weight = document.getElementById("weight").value;
 
-    alert(weight);
+  let macroCalculator = document.getElementById("macro-form");
+
+  macroCalculator.onclick = function(e) {
+    e.preventDefault();
+    let age = macroCalculator[0].value;
+    let weight = macroCalculator[1].value;
+    let gender = macroCalculator[2].value;
+    let height = macroCalculator[3].value;
+    let activity = macroCalculator[4].value;
+    let bodyfat = macroCalculator[5].value;
+
+    let proteins = (document.getElementById("protein-results").textContent =
+      weight * 1.5);
+    let fats = weight * 1.25;
   };
-
-  /* Macro Calculator Error Message */
-  var newItem = document.createElement("span"); // Create a <li> node
-  var textnode = document.createTextNode("* Please fill out all fields"); // Create a text node
-  newItem.appendChild(textnode); // Append the text to <li>
-
-  newItem.style.display = "block";
-  newItem.style.paddingTop = "50px";
-  newItem.style.color = "red";
-
-  macroCalculatorForm.parentNode.insertBefore(newItem, macroCalculatorForm);
-
-  console.log(macroCalculatorForm);
 })();

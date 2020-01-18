@@ -30,10 +30,16 @@ nav .logo {
   display: block;
 }
 
+.hamburger-icon:hover {
+  text-decoration: none;
+  color: black;
+}
+
 nav .fa-bars {
   text-align: right;
   display: block;
 }
+
 .logo {
   color: #5dcd11;
 }
@@ -43,6 +49,11 @@ nav .fa-bars {
 }
 
 /* Mobile Side Menu */
+.mobile-side-menu-hidden {
+  display: none;
+  transition: 1s;
+}
+
 .mobile-side-menu {
   width: 80%;
   height: 100%;
@@ -51,14 +62,18 @@ nav .fa-bars {
   right: 0;
   z-index: 2 !important;
   background-color: white;
-  border-left: 1px solid black;
-  display: none;
+  transition: 1s;
+  box-shadow: 0px 0px 10px #232931;
 }
 
 .mobile-side-menu .fa-times {
   padding: 25px 25px 0 0;
   text-align: right;
   display: block;
+}
+
+.mobile-side-menu .fa-times:hover {
+  cursor: pointer;
 }
 
 .mobile-side-menu ul {
@@ -132,7 +147,6 @@ nav .fa-bars {
   border-radius: 25px;
   padding: 5%;
   margin: 5% 0;
-  display: none;
 }
 
 .macro-calculator-results h3 {

@@ -7,10 +7,10 @@
                 <h1>Macro Calculator</h1>
                 <img src="./img/undraw_fitness_tracker_3033.svg" alt="">
                 <div class="macro-calculator-results">
-                    <h3>Calories: <span>1234</span></h3>
-                    <h3>Protein: <span>123</span></h3>
-                    <h3>Fats: <span>123</span></h3>
-                    <h3>Carbs: <span>1234</span></h3>
+                    <h3>Calories: <span id="calorie-results"></span></h3>
+                    <h3>Protein: <span id="protein-results"></span></h3>
+                    <h3>Fats: <span id="fat-results"></span></h3>
+                    <h3>Carbs: <span id="carb-results"></span></h3>
                     <p>Save these results <a href="#">Create an Account</a></p>
                 </div>
             </div>
