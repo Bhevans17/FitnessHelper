@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form class="macro-calculator" action="#">
+                <form id="macro-form" class="macro-calculator" action="#">
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
