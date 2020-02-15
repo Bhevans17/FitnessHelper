@@ -109,9 +109,12 @@ nav .fa-bars {
   color: #5dcd11;
 }
 
-.calculator-wrapper img {
+#main-img {
   width: 80vw;
   height: 20vh;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
 
 /*********** MACRO CALCULATOR ***********/
@@ -255,7 +258,7 @@ footer a:hover {
   color: grey;
 }
 
-/*********** MAIN ***********/
+/*********** MAIN **********
 
 @media only screen and (min-width: 1024px) {
   .hamburger-icon {
@@ -271,3 +274,4 @@ footer a:hover {
     display: inline;
   }
 }
+*/

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <h1>Macro Calculator</h1>
-                <img src="./img/undraw_fitness_tracker_3033.svg" alt="">
+                <img id="main-img" src="./img/undraw_fitness_tracker_3033.svg" alt="">
                 <div class="macro-calculator-results">
                     <h3>Calories: <span id="calorie-results"></span></h3>
                     <h3>Protein: <span id="protein-results"></span></h3>
