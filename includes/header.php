@@ -34,6 +34,9 @@
         <i class="fas fa-times"></i>
         <ul>
             <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
                 <a href="#">About</a>
             </li>
             <li>
