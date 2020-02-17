@@ -1,6 +1,5 @@
 <!-- Footer -->
 <footer>
-    <p>Copyright 2020 &copy; All Rights Reserved.</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
