@@ -7,11 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
   Container
 } from "reactstrap";
 
@@ -22,7 +17,7 @@ const Example = props => {
 
   return (
     <div>
-      <Navbar className='mb-5 py-2 border-bottom' expand='md'>
+      <Navbar className='mb-5 py-2 border-bottom' expand='sm'>
         <Container>
           <NavbarBrand href='/'>
             <span style={{ color: "#62CD11" }}>FITNESS</span>
@@ -32,11 +27,14 @@ const Example = props => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href='#'>
-                  <ion-icon
-                    style={{ fontSize: "2.5rem", color: "black" }}
-                    name='logo-github'
-                  ></ion-icon>
+                <NavLink style={{ color: "#62CD11" }} href='#macro-calculator'>
+                  Macro Calculator
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink style={{ color: "#62CD11" }} href='#search-food'>
+                  Search Food
                 </NavLink>
               </NavItem>
             </Nav>

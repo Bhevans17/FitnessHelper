@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Input } from "reactstrap";
 import IMG from "../img/img1.svg";
 
 class Calculator extends React.Component {
@@ -96,115 +96,124 @@ class Calculator extends React.Component {
 
   render() {
     return (
-      <div className='container text-center'>
-        <h1 className='my-5' style={{ color: "#62CD11" }}>
-          Fitness Calculator
-        </h1>
-        <img
-          className='img-fluid'
-          style={{ height: "50%", width: "50%" }}
-          src={IMG}
-          alt=''
-        />
-        <div className='row my-5 w-50 mx-auto'>
+      <div
+        id='macro-calculator'
+        className='container d-flex align-items-center text-center section-wrapper'
+      >
+        <div className='row d-flex align-items-center'>
           <div className='col-md-6'>
-            <h2>BMR: {this.state.BMR}</h2>
+            <h1 className='my-5' style={{ color: "#62CD11" }}>
+              Macro Calculator
+            </h1>
+            <img
+              className='img-fluid'
+              style={{ width: "100%" }}
+              src={IMG}
+              alt=''
+            />
           </div>
           <div className='col-md-6'>
-            <h2>Calories: {this.state.caloriceIntake}</h2>
+            <div className='row'>
+              <div className='col-md-6'>
+                <h2>BMR: {this.state.BMR}</h2>
+              </div>
+              <div className='col-md-6'>
+                <h2>Calories: {this.state.caloriceIntake}</h2>
+              </div>
+            </div>
+
+            <Form action='#'>
+              <div className='row'>
+                <div className='col-md-6'>
+                  <FormGroup>
+                    <Input
+                      type='select'
+                      name='gender'
+                      id='gender'
+                      onChange={this.handleGenderChange}
+                      required
+                    >
+                      <option value='Inputgender'>Select Gender</option>
+                      <option value='male'>Male</option>
+                      <option value='female'>Female</option>
+                    </Input>
+                  </FormGroup>
+                </div>
+                <div className='col-md-6'>
+                  <FormGroup>
+                    <Input
+                      type='select'
+                      name='activitylevel'
+                      id='activitylevel'
+                      onChange={this.handleActivityChange}
+                      required
+                    >
+                      <option value='Select Activity Level'>
+                        Select Activity Level
+                      </option>
+                      <option value='sedentary'>Sendentary</option>
+                      <option value='light'>Light</option>
+                      <option value='moderate'>Moderate</option>
+                      <option value='active'>Active</option>
+                      <option value='veryactive'>Very Active</option>
+                    </Input>
+                  </FormGroup>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-md-6'>
+                  <FormGroup>
+                    <input
+                      className='form-control'
+                      id='weight-in-pounds'
+                      type='text'
+                      placeholder='Weight in lbs'
+                      required
+                      value={this.state.weightInPounds}
+                      onChange={this.handleWipChange}
+                    />
+                  </FormGroup>
+                </div>
+                <div className='col-md-6'>
+                  <FormGroup>
+                    <input
+                      className='form-control'
+                      id='height-in-inches'
+                      type='text'
+                      placeholder='Height in inches'
+                      required
+                      value={this.state.heightInInches}
+                      onChange={this.handleHiiChange}
+                    />
+                  </FormGroup>
+                </div>
+              </div>
+
+              <div className='row'>
+                <div className='col-md-6'>
+                  <FormGroup>
+                    <input
+                      className='form-control'
+                      id='age-in-years'
+                      type='text'
+                      placeholder='Age in years'
+                      required
+                      value={this.state.ageInYears}
+                      onChange={this.handleAiyChange}
+                    />
+                  </FormGroup>
+                </div>
+              </div>
+              <Button
+                style={{ backgroundColor: "#62CD11" }}
+                onClick={this.calculateBmr}
+                block
+              >
+                Calculate
+              </Button>
+            </Form>
           </div>
         </div>
-
-        <Form className='w-50 mx-auto my-5' action='#'>
-          <div className='row'>
-            <div className='col-md-6'>
-              <FormGroup>
-                <Input
-                  type='select'
-                  name='gender'
-                  id='gender'
-                  onChange={this.handleGenderChange}
-                  required
-                >
-                  <option value='Inputgender'>Select Gender</option>
-                  <option value='male'>Male</option>
-                  <option value='female'>Female</option>
-                </Input>
-              </FormGroup>
-            </div>
-            <div className='col-md-6'>
-              <FormGroup>
-                <Input
-                  type='select'
-                  name='activitylevel'
-                  id='activitylevel'
-                  onChange={this.handleActivityChange}
-                  required
-                >
-                  <option value='Select Activity Level'>
-                    Select Activity Level
-                  </option>
-                  <option value='sedentary'>Sendentary</option>
-                  <option value='light'>Light</option>
-                  <option value='moderate'>Moderate</option>
-                  <option value='active'>Active</option>
-                  <option value='veryactive'>Very Active</option>
-                </Input>
-              </FormGroup>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-md-6'>
-              <FormGroup>
-                <input
-                  className='form-control'
-                  id='weight-in-pounds'
-                  type='text'
-                  placeholder='Weight in lbs'
-                  required
-                  value={this.state.weightInPounds}
-                  onChange={this.handleWipChange}
-                />
-              </FormGroup>
-            </div>
-            <div className='col-md-6'>
-              <FormGroup>
-                <input
-                  className='form-control'
-                  id='height-in-inches'
-                  type='text'
-                  placeholder='Height in inches'
-                  required
-                  value={this.state.heightInInches}
-                  onChange={this.handleHiiChange}
-                />
-              </FormGroup>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col-md-6'>
-              <FormGroup>
-                <input
-                  className='form-control'
-                  id='age-in-years'
-                  type='text'
-                  placeholder='Age in years'
-                  required
-                  value={this.state.ageInYears}
-                  onChange={this.handleAiyChange}
-                />
-              </FormGroup>
-            </div>
-          </div>
-          <Button
-            style={{ backgroundColor: "#62CD11" }}
-            onClick={this.calculateBmr}
-            block
-          >
-            Calculate
-          </Button>
-        </Form>
       </div>
     );
   }
