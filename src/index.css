@@ -1,5 +1,3 @@
-.section-wrapper {
-  height: 60vh;
-  display: flex;
-  align-items: center;
+html {
+  overflow-y: scroll;
 }
