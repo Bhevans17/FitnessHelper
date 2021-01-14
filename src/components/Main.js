@@ -1,6 +1,7 @@
 import React from "react";
 import Calculator from "./Calculator";
 import IMG from "../img/img3.svg";
+import EmailModal from "./EmailModal";
 
 function Main() {
   return (
@@ -8,7 +9,7 @@ function Main() {
       <div className='row my-5 d-flex align-items-center'>
         <div className='col-md-6'>
           <h1 className='mb-4' style={{ color: "#62CD11" }}>
-            Macronutrients<span style={{ color: "#26BEFF" }}> Calcualtor</span>
+            Macronutrients<span style={{ color: "#26BEFF" }}> Calculator</span>
           </h1>
           <p>
             <b>Calculate</b>{" "}
@@ -23,6 +24,10 @@ function Main() {
             <span className='text-secondary'>
               how many calories you should eat per day.
             </span>
+          </p>
+          <p>
+            <b>Email</b>{" "}
+            <span className='text-secondary'>yourself the results.</span>
           </p>
         </div>
         <div className='col-md-6'>

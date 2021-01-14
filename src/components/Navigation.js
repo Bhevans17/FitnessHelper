@@ -23,6 +23,7 @@ const Navigation = (props) => {
             <span style={{ color: "#62CD11" }}>Fitness</span>
             <span style={{ color: "#26BEFF" }}>Helpr</span>
           </NavbarBrand>
+          {/*
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className='ml-auto' navbar>
@@ -48,7 +49,7 @@ const Navigation = (props) => {
                 </NavLink>
               </NavItem>
             </Nav>
-          </Collapse>
+          </Collapse> */}
         </Container>
       </Navbar>
     </div>

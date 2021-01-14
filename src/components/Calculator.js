@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import EmailModal from "./EmailModal";
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -7,22 +8,41 @@ class Calculator extends React.Component {
 
     this.state = {
       height: 0,
-      activityLevel: null,
-      gender: 0,
-      age: null,
-      weight: null,
-      bodyFat: null,
+      genderVal: 88.362,
+      selectedGender: "male",
+      age: 0,
+      weight: 0,
+      calorieIntake: 0,
+      proteinIntake: 0,
+      carbIntake: 0,
+      fatIntake: 0,
     };
 
     this.calculateWeight = this.calculateWeight.bind(this);
     this.handleHeight = this.handleHeight.bind(this);
     this.handleAge = this.handleAge.bind(this);
     this.handleWeight = this.handleWeight.bind(this);
+    this.handleGender = this.handleGender.bind(this);
+    this.clearValues = this.clearValues.bind(this);
+  }
+
+  clearValues() {
+    this.setState({
+      height: 0,
+      genderVal: 88.362,
+      selectedGender: "male",
+      age: 0,
+      weight: 0,
+      calorieIntake: 0,
+      proteinIntake: 0,
+      carbIntake: 0,
+      fatIntake: 0,
+    });
   }
 
   handleHeight(e) {
     this.setState({ height: parseInt(e.target.value) }, () => {
-      console.log(typeof this.state.height);
+      console.log(this.state.height);
     });
   }
 
@@ -37,21 +57,52 @@ class Calculator extends React.Component {
   }
 
   handleGender(e) {
-    this.setState({ gender: e.target.value }, () => {
-      console.log(this.state.gender);
-    });
+    this.setState(
+      {
+        selectedGender: e.target.value,
+      },
+      () => {
+        if (this.state.selectedGender === "male") {
+          this.setState({ genderVal: 88.362 }, () =>
+            console.log(this.state.genderVal)
+          );
+        }
+
+        if (this.state.selectedGender === "female") {
+          this.setState({ genderVal: 447.593 }, () =>
+            console.log(this.state.genderVal)
+          );
+        }
+      }
+    );
   }
 
   calculateWeight() {
-    this.setState((state) => {
-      let val = Object.values(state);
+    if (this.state.selectedGender === "male") {
+      this.setState(
+        (state) => {
+          state.calorieIntake =
+            13.397 * state.weight * 0.453 +
+            4.799 * state.height -
+            5.677 * state.age +
+            88.362;
+        },
+        () => console.log(this.state.calorieIntake)
+      );
+    }
 
-      val.map((x) => {
-        if (x === null) {
-          console.log("please fill out all fields");
-        }
-      });
-    });
+    if (this.state.selectedGender === "female") {
+      this.setState(
+        (state) => {
+          state.calorieIntake =
+            9.247 * state.weight +
+            3.098 * state.height -
+            4.33 * state.age +
+            447.593;
+        },
+        () => console.log(this.state.calorieIntake)
+      );
+    }
   }
 
   render() {
@@ -98,23 +149,10 @@ class Calculator extends React.Component {
                   <option value='205.74'>6ft 9in</option>
                   <option value='208.28'>6ft 10in</option>
                   <option value='210.82'>6ft 11in</option>
-                  <option value='213.36'>7ft 0in</option>
+                  <option value={213.36}>7ft 0in</option>
                 </Input>
               </FormGroup>
-            </div>{" "}
-            {/*
-            <div className='col-12 col-md-4 py-2 border'>
-              <FormGroup>
-                <Label for='activity-level'>Activity Level</Label>
-                <Input type='select' name='activity-level' id='activity-level'>
-                  <option>Sedentary</option>
-                  <option>Light</option>
-                  <option>Moderate</option>
-                  <option>Heavy</option>
-                  <option>Athlete</option>
-                </Input>
-              </FormGroup>
-            </div> */}
+            </div>
             <div className='col-12 col-md-4 py-2 border'>
               <FormGroup>
                 <Label for='age'>Age</Label>
@@ -147,12 +185,26 @@ class Calculator extends React.Component {
                 <legend>Gender</legend>
                 <FormGroup check>
                   <Label check>
-                    <Input type='radio' name='male' /> Male
+                    <Input
+                      type='radio'
+                      name='male'
+                      value='male'
+                      checked={this.state.selectedGender === "male"}
+                      onChange={this.handleGender}
+                    />
+                    Male
                   </Label>
                 </FormGroup>
                 <FormGroup check>
                   <Label check>
-                    <Input type='radio' name='female' /> Female
+                    <Input
+                      type='radio'
+                      name='female'
+                      value='female'
+                      checked={this.state.selectedGender === "female"}
+                      onChange={this.handleGender}
+                    />
+                    Female
                   </Label>
                 </FormGroup>
               </FormGroup>
@@ -162,12 +214,16 @@ class Calculator extends React.Component {
                 <Label className='text-secondary'>
                   (Based on Revised Harris-Benedict Equation)
                 </Label>
+                <EmailModal
+                  buttonLabel='Calculate'
+                  childClick={this.calculateWeight}
+                  calories={this.state.calorieIntake}
+                />
                 <Button
-                  style={{ backgroundColor: "#62CD11" }}
-                  className='btn btn-block'
-                  onClick={this.calculateWeight}
+                  className='btn btn-block btn-secondary mt-2'
+                  onClick={this.clearValues}
                 >
-                  Calculate
+                  Clear
                 </Button>
               </FormGroup>
             </div>
