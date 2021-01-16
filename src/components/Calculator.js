@@ -1,6 +1,40 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import Select from "react-select";
 import EmailModal from "./EmailModal";
+
+const options = [
+  { value: "139.7", label: "4ft 7in" },
+  { value: "142.24", label: "4ft 8in" },
+  { value: "144.78", label: "4ft 9in" },
+  { value: "147.32", label: "4ft 10in" },
+  { value: "149.86", label: "4ft 11in" },
+  { value: "152.4", label: "5ft 0in" },
+  { value: "154.94", label: "5ft 1in" },
+  { value: "157.48", label: "5ft 2in" },
+  { value: "160.02", label: "5ft 3in" },
+  { value: "162.56", label: "5ft 4in" },
+  { value: "165.1", label: "5ft 5in" },
+  { value: "167.64", label: "5ft 6in" },
+  { value: "170.18", label: "5ft 7in" },
+  { value: "172.72", label: "5ft 8in" },
+  { value: "175.26", label: "5ft 9in" },
+  { value: "177.8", label: "5ft 10in" },
+  { value: "180.34", label: "5ft 11in" },
+  { value: "182.88", label: "6ft 0in" },
+  { value: "185.42", label: "6ft 1in" },
+  { value: "187.96", label: "6ft 2in" },
+  { value: "190.5", label: "6ft 3in" },
+  { value: "193.04", label: "6ft 4in" },
+  { value: "195.58", label: "6ft 5in" },
+  { value: "198.12", label: "6ft 6in" },
+  { value: "200.66", label: "6ft 7in" },
+  { value: "203.2", label: "6ft 8in" },
+  { value: "205.74", label: "6ft 9in" },
+  { value: "208.28", label: "6ft 10in" },
+  { value: "210.82", label: "6ft 11in" },
+  { value: "213.36", label: "7ft 0in" },
+];
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -41,7 +75,7 @@ class Calculator extends React.Component {
   }
 
   handleHeight(e) {
-    this.setState({ height: parseInt(e.target.value) }, () => {
+    this.setState({ height: parseInt(e.value) }, () => {
       console.log(this.state.height);
     });
   }
@@ -64,13 +98,13 @@ class Calculator extends React.Component {
       () => {
         if (this.state.selectedGender === "male") {
           this.setState({ genderVal: 88.362 }, () =>
-            console.log(this.state.genderVal)
+            console.log(this.state.selectedGender)
           );
         }
 
         if (this.state.selectedGender === "female") {
           this.setState({ genderVal: 447.593 }, () =>
-            console.log(this.state.genderVal)
+            console.log(this.state.selectedGender)
           );
         }
       }
@@ -87,7 +121,7 @@ class Calculator extends React.Component {
             5.677 * state.age +
             88.362;
         },
-        () => console.log(this.state.calorieIntake)
+        () => console.log(Math.floor(this.state.calorieIntake))
       );
     }
 
@@ -95,7 +129,7 @@ class Calculator extends React.Component {
       this.setState(
         (state) => {
           state.calorieIntake =
-            9.247 * state.weight +
+            9.247 * state.weight * 0.453 +
             3.098 * state.height -
             4.33 * state.age +
             447.593;
@@ -113,44 +147,12 @@ class Calculator extends React.Component {
             <div className='col-12 col-md-4 py-2 border'>
               <FormGroup>
                 <Label for='height'>Height</Label>
-                <Input
-                  type='select'
-                  name='height'
+                <Select
                   id='height'
-                  value={this.state.height}
+                  name='height'
+                  options={options}
                   onChange={this.handleHeight}
-                >
-                  <option value='139.7'>4ft 7in</option>
-                  <option value='142.24'>4ft 8in</option>
-                  <option value='144.78'>4ft 9in</option>
-                  <option value='147.32'>4ft 10in</option>
-                  <option value='149.86'>4ft 11in</option>
-                  <option value='152.4'>5ft 0in</option>
-                  <option value='154.94'>5ft 1in</option>
-                  <option value='157.48'>5ft 2in</option>
-                  <option value='160.02'>5ft 3in</option>
-                  <option value='162.56'>5ft 4in</option>
-                  <option value='165.1'>5ft 5in</option>
-                  <option value='167.64'>5ft 6in</option>
-                  <option value='170.18'>5ft 7in</option>
-                  <option value='172.72'>5ft 8in</option>
-                  <option value='175.26'>5ft 9in</option>
-                  <option value='177.8'>5ft 10in</option>
-                  <option value='180.34'>5ft 11in</option>
-                  <option value='182.88'>6ft 0in</option>
-                  <option value='185.42'>6ft 1in</option>
-                  <option value='187.96'>6ft 2in</option>
-                  <option value='190.5'>6ft 3in</option>
-                  <option value='193.04'>6ft 4in</option>
-                  <option value='195.58'>6ft 5in</option>
-                  <option value='198.12'>6ft 6in</option>
-                  <option value='200.66'>6ft 7in</option>
-                  <option value='203.2'>6ft 8in</option>
-                  <option value='205.74'>6ft 9in</option>
-                  <option value='208.28'>6ft 10in</option>
-                  <option value='210.82'>6ft 11in</option>
-                  <option value={213.36}>7ft 0in</option>
-                </Input>
+                />
               </FormGroup>
             </div>
             <div className='col-12 col-md-4 py-2 border'>
