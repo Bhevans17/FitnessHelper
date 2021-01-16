@@ -111,31 +111,45 @@ class Calculator extends React.Component {
     );
   }
 
-  calculateWeight() {
+  calculateWeight(e) {
     if (this.state.selectedGender === "male") {
-      this.setState(
-        (state) => {
-          state.calorieIntake =
-            13.397 * state.weight * 0.453 +
-            4.799 * state.height -
-            5.677 * state.age +
-            88.362;
-        },
-        () => console.log(Math.floor(this.state.calorieIntake))
+      let calories = Math.floor(
+        13.397 * this.state.weight * 0.453 +
+          4.799 * this.state.height -
+          5.677 * this.state.age +
+          88.362
       );
+      this.setState({ calorieIntake: calories }, () => {
+        let proteins = Math.floor(0.4 * this.state.calorieIntake);
+        let carbs = Math.floor(0.35 * this.state.calorieIntake);
+        let fats = Math.floor(0.25 * this.state.calorieIntake);
+
+        this.setState({
+          proteinIntake: proteins,
+          carbIntake: carbs,
+          fatIntake: fats,
+        });
+      });
     }
 
     if (this.state.selectedGender === "female") {
-      this.setState(
-        (state) => {
-          state.calorieIntake =
-            9.247 * state.weight * 0.453 +
-            3.098 * state.height -
-            4.33 * state.age +
-            447.593;
-        },
-        () => console.log(this.state.calorieIntake)
+      let calories = Math.floor(
+        9.247 * this.state.weight * 0.453 +
+          3.098 * this.state.height -
+          4.33 * this.state.age +
+          447.593
       );
+      this.setState({ calorieIntake: calories }, () => {
+        let proteins = this.state.calorieIntake * 0.4;
+        let carbs = 0.35 * this.state.calorieIntake;
+        let fats = 0.25 * this.state.calorieIntake;
+
+        this.setState({
+          proteinIntake: proteins,
+          carbIntake: carbs,
+          fatIntake: fats,
+        });
+      });
     }
   }
 
@@ -152,6 +166,7 @@ class Calculator extends React.Component {
                   name='height'
                   options={options}
                   onChange={this.handleHeight}
+                  defaultValue={{ label: "Select Height", value: 0 }}
                 />
               </FormGroup>
             </div>
@@ -216,17 +231,33 @@ class Calculator extends React.Component {
                 <Label className='text-secondary'>
                   (Based on Revised Harris-Benedict Equation)
                 </Label>
+                <Button
+                  className='btn btn-block btn-success mt-2'
+                  onClick={this.calculateWeight}
+                >
+                  Calculate
+                </Button>
+                {/*
                 <EmailModal
                   buttonLabel='Calculate'
                   childClick={this.calculateWeight}
                   calories={this.state.calorieIntake}
                 />
+                */}
                 <Button
                   className='btn btn-block btn-secondary mt-2'
                   onClick={this.clearValues}
                 >
                   Clear
                 </Button>
+              </FormGroup>
+            </div>
+            <div className='col-12 col-md-4 py-2 border'>
+              <FormGroup>
+                <h4>Calories: {this.state.calorieIntake}</h4>
+                <h4>Proteins: {this.state.proteinIntake}</h4>
+                <h4>Carbs: {this.state.carbIntake}</h4>
+                <h4>Fats: {this.state.fatIntake}</h4>
               </FormGroup>
             </div>
           </div>
